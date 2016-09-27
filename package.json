@@ -9,7 +9,9 @@
     "email": "thisdavej@gmail.com",
     "url": "thisdavej.com"
   },
-  "bin": "cli.js",
+  "bin": {
+    "ds18b20": "cli.js"
+  },
   "engines": {
     "node": ">=6"
   },
