@@ -20,10 +20,10 @@ const cli = meow(`
 
 	Examples
 	  Get temperature of a specific 1-Wire device id
-	  $ ds18b20 28-012111141117
+	  $ ds18b20 28-051724b238ff
 
 	  Get temperature of a specific 1-Wire device id in degF with 2 decimals
-	  $ ds18b20 28-012111141117 --degf -d 2
+	  $ ds18b20 28-051724b238ff --degf -d 2
 
 	  Get temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
 	  $ ds18b20
