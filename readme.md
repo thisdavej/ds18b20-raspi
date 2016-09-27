@@ -39,16 +39,18 @@ console.log(`${tempC} degC`);
 sensor.readSimpleC((err, temp) => {
 	if (err) {
 		console.log(err);
-	}
+	} else {
 	console.log(`${temp} degC`);
+	}
 });
 
 // round temperature reading to 1 digit
 sensor.readSimpleC(1, (err, temp) => {
 	if (err) {
 		console.log(err);
-	}
+	} else {
 	console.log(`${temp} degC`);
+	}
 });
 ```
 
