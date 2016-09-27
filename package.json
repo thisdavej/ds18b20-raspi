@@ -1,0 +1,43 @@
+{
+  "name": "ds18b20-raspi",
+  "version": "0.2.0",
+  "description": "Display temperature readings from a DS18B20 1-Wire sensor connected to a Raspberry Pi",
+  "license": "MIT",
+  "repository": "thisdavej/ds18b20-raspi",
+  "author": {
+    "name": "Dave Johnson",
+    "email": "thisdavej@gmail.com",
+    "url": "thisdavej.com"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "test": "tap test/t-*.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "ds18b20",
+    "raspberry",
+    "pi",
+    "raspi",
+    "rpi",
+    "temperature",
+    "sensor",
+    "cli",
+    "command-line"
+  ],
+  "dependencies": {
+    "async": "^2.0.1",
+    "cli-table2": "^0.2.0",
+    "meow": "^3.7.0",
+    "round-to": "^1.1.0"
+  },
+  "devDependencies": {
+    "tap": "^7.1.2"
+  }
+}
