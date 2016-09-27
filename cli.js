@@ -5,27 +5,27 @@ const Table = require('cli-table2');
 
 const cli = meow(`
 	Name
-	  ds18b20 - display temperature readings from a DS18B20 1-Wire sensor connected to a Raspberry Pi
+	  ds18b20 - get temperature readings from a DS18B20 1-Wire sensor connected to a Raspberry Pi
 
 	Usage
 	  $ ds18b20 [deviceId] [options]
 
 	Options
-	  --all, -a       Display readings of all temperature sensors found
+	  --all, -a       Get readings of all temperature sensors found
 	  --list, -l      List device ids of all 1-Wire sensors found
-	  --degf, -f      Display temperature in degF instead of degC
+	  --degf, -f      Get temperature in degF instead of degC
 	  --decimals, -d  Number of decimal digits to display
 	  --help, -h      Show help
 	  --version, -v   Display version information
 
 	Examples
-	  Display temperature of a specific 1-Wire device id
+	  Get temperature of a specific 1-Wire device id
 	  $ ds18b20 28-012111141117
 
-	  Display temperature of a specific 1-Wire device id in degF with 2 decimals
+	  Get temperature of a specific 1-Wire device id in degF with 2 decimals
 	  $ ds18b20 28-012111141117 --degf -d 2
 
-	  Display temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
+	  Get temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
 	  $ ds18b20
 
 	  List device ids of all 1-Wire sensors found

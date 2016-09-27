@@ -1,6 +1,6 @@
 # ds18b20-raspi
 
-Display temperature readings from a [DS18B20](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html) 1-Wire sensor connected to a Raspberry Pi.
+Get temperature readings from a [DS18B20](https://www.maximintegrated.com/en/products/analog/sensors-and-sensor-interface/DS18B20.html) 1-Wire sensor connected to a Raspberry Pi.
 
 ## Noteworthy Features
 
@@ -24,7 +24,7 @@ const sensor = require('ds18b20-raspi');
 
 ### readSimpleC([decimals], [callback(error, reading)])
 
-Display temperature (degC) of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
+Get temperature (degC) of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
 
 ```js
 const tempC = sensor.readSimpleC();
@@ -55,7 +55,7 @@ sensor.readSimpleC(1, (err, temp) => {
 
 ### readSimpleF([decimals], [callback(error, reading)])
 
-Display temperature (degF) of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
+Get temperature (degF) of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
 
 ```js
 const tempF = sensor.readSimpleF();
@@ -67,7 +67,7 @@ See other `readSimpleC` examples above and change `readSimpleC` to `readSimpleF`
 
 ### readAllC([decimals], [callback(error, readings)])
 
-Display readings (degC) of all temperature sensors found
+Get readings (degC) of all temperature sensors found
 
 ```js
 const temps = sensor.readAllC();
@@ -99,7 +99,7 @@ sensor.readAllC(2, (err, temps) => {
 
 ### readAllF([decimals], [callback(error, readings)])
 
-Display readings (degF) of all temperature sensors found
+Get readings (degF) of all temperature sensors found
 
 ```js
 const temps = sensor.readAllF();
@@ -111,7 +111,7 @@ See other `readAllC` examples above and change `readAllC` to `readAllF`.
 
 ### readC(deviceId, [decimals], [callback(error, readings)])
 
-Display temperature reading (degC) for a specific 1-Wire device id
+Get temperature reading (degC) for a specific 1-Wire device id
 
 ```js
 const deviceId = '28-051724b238ff';
@@ -148,7 +148,7 @@ sensor.readC(deviceId, 2, (err, temp) => {
 
 ### readF(deviceId, [decimals], [callback(error, readings)])
 
-Display temperature reading (degF) for a specific 1-Wire device id
+Get temperature reading (degF) for a specific 1-Wire device id
 
 ```js
 const deviceId = '28-051724b238ff';
@@ -191,21 +191,21 @@ $ npm install -g ds18b20-raspi
 $ ds18b20 [deviceId] [options]
 
 Options
-  --all, -a       Display readings of all temperature sensors found
+  --all, -a       Get readings of all temperature sensors found
   --list, -l      List device ids of all 1-Wire sensors found
-  --degf, -f      Display temperature in degF instead of degC
+  --degf, -f      Get temperature in degF instead of degC
   --decimals, -d  Number of decimal digits to display
   --help, -h      Show help
   --version, -v   Display version information
 
 Examples
-  Display temperature of a specific 1-Wire device id
+  Get temperature of a specific 1-Wire device id
   $ ds18b20 28-051724b238ff
 
-  Display temperature of a specific 1-Wire device id in degF with 2 decimals
+  Get temperature of a specific 1-Wire device id in degF with 2 decimals
   $ ds18b20 28-051724b238ff --degf -d 2
 
-  Display temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
+  Get temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
   $ ds18b20
 
   List device ids of all 1-Wire sensors found
