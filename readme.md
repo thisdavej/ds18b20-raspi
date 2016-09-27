@@ -199,14 +199,17 @@ Options
   --version, -v   Display version information
 
 Examples
+  Get temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
+  $ ds18b20
+
+  Get temperature readings of all 1-Wire sensors found
+  $ ds18b20 -a
+
   Get temperature of a specific 1-Wire device id
   $ ds18b20 28-051724b238ff
 
   Get temperature of a specific 1-Wire device id in degF with 2 decimals
-  $ ds18b20 28-051724b238ff --degf -d 2
-
-  Get temperature of sensor (only works if there is exactly one DS18B20 1-Wire sensor present)
-  $ ds18b20
+  $ ds18b20 28-051724b238ff -f -d 2
 
   List device ids of all 1-Wire sensors found
   $ ds18b20 --list
