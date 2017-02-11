@@ -219,4 +219,4 @@ Examples
 
 ## License
 
-MIT © [Dave Johnson (thisDave)](http://thisdavej.com)
+MIT © [Dave Johnson (thisDaveJ)](http://thisdavej.com)
