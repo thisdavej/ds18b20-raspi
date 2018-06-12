@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const meow = require('meow');
 const sensor = require('./');
-const Table = require('cli-table2');
+const Table = require('cli-table3');
 
 const cli = meow(`
 	Name
