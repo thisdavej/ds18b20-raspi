@@ -36,7 +36,6 @@
   "dependencies": {
     "async": "^2.6.1",
     "cli-table3": "^0.5.0",
-    "eslint-config-airbnb-base": "^13.1.0",
     "meow": "^5.0.0",
     "round-to": "^3.0.0"
   },
