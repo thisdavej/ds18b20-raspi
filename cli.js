@@ -34,14 +34,23 @@ const cli = meow(`
 	  List device ids of all 1-Wire sensors found
 	  $ ds18b20 --list
 `, {
-	alias: {
-		a: 'all',
-		d: 'decimals',
-		l: 'list',
-		f: 'degf',
-		h: 'help',
-		v: 'version',
-	},
+	flags: {
+		all: {
+			type: "boolean",
+			alias: "a"
+		},
+		list: {
+			type: "boolean",
+			alias: "l"
+		},
+		degf: {
+			type: "boolean",
+			alias: "f"
+		},
+		decimals: { alias: "d" },
+		help: { alias: "h"},
+		version: {alias: "v"}
+	}
 });
 
 
