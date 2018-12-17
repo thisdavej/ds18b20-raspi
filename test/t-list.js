@@ -35,6 +35,10 @@ for (const arg of arrArgs) {
 		tester(t, fn, arg.a, '1-device-no', arg.expErr, expArray(1, arg.expErr));
 	});
 
+	test('Getting list (1 device - crc-zero in file)...', (t) => {
+		tester(t, fn, arg.a, '1-device-crc-zero', arg.expErr, expArray(1, arg.expErr));
+	});
+
 	test('Getting list (no devices)...', (t) => {
 		tester(t, fn, arg.a, 'no-devices', true, []);
 	});
