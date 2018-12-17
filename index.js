@@ -107,17 +107,18 @@ function list(cb) {
 function parseTemperature(data, id, opts) {
 	const arr = data.split('\n');
 	const digits = opts.digits !== undefined ? opts.digits : DEFAULT_DIGITS;
-	let temp;
+	let temp = TEMPERATURE_NOT_FOUND_VALUE;
 
-	if (arr[0].indexOf('YES') > -1) {
+	// Ensure "crc=00" is not present since this indicates the sensor has been disconnected.
+	if (arr[0].indexOf('YES') > -1 && arr[0].indexOf('crc=00') === -1) {
 		const out = data.match(/t=(-?(\d+))/);
-		temp = parseInt(out[1], 10) / 1000;
-		if (opts.degF) {
-			temp = convertCtoF(temp);
+		if (out !== null) {
+			temp = parseInt(out[1], 10) / 1000;
+			if (opts.degF) {
+				temp = convertCtoF(temp);
+			}
+			temp = roundTo(temp, digits);
 		}
-		temp = roundTo(temp, digits);
-	} else if (arr[0].indexOf('NO') > -1) {
-		temp = TEMPERATURE_NOT_FOUND_VALUE;
 	}
 
 	let result;
@@ -128,7 +129,7 @@ function parseTemperature(data, id, opts) {
 	}
 	return result;
 }
-
+  
 function getTemperatureFileContents(filePath, id, opts, cb) {
 	const sensorText = id ? ` for deviceId = ${id}` : '';
 	const errorMsg = `Error: Could not find 1-Wire temperature sensor${sensorText}`;
@@ -250,9 +251,7 @@ function readAllCore(degF, digits, cb) {
 			const results = [];
 			async.each(sensors, (sensorId, done) => {
 				readTCore(sensorId, opts, (err, reading) => {
-					if (!err) {
-						results.push(reading);
-					}
+					results.push(reading);
 					done();
 				});
 			}, (err) => {
