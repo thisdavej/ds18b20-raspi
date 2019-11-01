@@ -38,7 +38,7 @@ for (const c of configs) {
 		});
 
 		test(`Getting temperature using ${c.fn.name} (1 device-crc-zero in file)...`, (t) => {
-			tester(t, c.fn, arg.a, '1-device-crc-zero', false, null);
+			tester(t, c.fn, arg.a, '1-device-crc-zero', true, null);
 		});
 
 		test(`Getting temperature using ${c.fn.name} (no devices)...`, (t) => {
