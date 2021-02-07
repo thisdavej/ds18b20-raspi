@@ -72,6 +72,16 @@ function convertCtoF(tempC) {
 	return (tempC * (9 / 5)) + 32;
 }
 
+function listOrThrow() {
+	try {
+		const dataSync = fs.readFileSync(filePath, 'utf8');
+		return asSensorList(dataSync).sort();
+	}
+	catch {
+		throw new Error('Could not list 1-Wire sensors!');
+	}
+}
+
 function list(cb) {
 	const filePath = path.join(w1Directory, W1_MASTER);
 	const errorMsg = 'Error: Could not find any 1-Wire sensors to list';
@@ -129,7 +139,7 @@ function parseTemperature(data, id, opts) {
 	}
 	return result;
 }
-  
+
 function getTemperatureFileContents(filePath, id, opts, cb) {
 	const sensorText = id ? ` for deviceId = ${id}` : '';
 	const errorMsg = `Error: Could not find 1-Wire temperature sensor${sensorText}`;
@@ -281,6 +291,7 @@ function readAllF(digits, cb) {
 }
 
 module.exports.list = list;
+module.exports.listOrThrow = listOrThrow;
 module.exports.readC = readC;
 module.exports.readF = readF;
 module.exports.readSimpleC = readSimpleC;
