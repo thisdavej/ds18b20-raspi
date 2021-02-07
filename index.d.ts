@@ -5,39 +5,39 @@ export type ValueWithID = {
 	t: number | null;
 };
 
-export function list(cb: (err: SensorError, result: string[]) => any);
+export function list(cb: (err: SensorError, result: string[]) => any): any;
 export function list(): string[];
 
 export function readC(
 	id: string,
 	digits: number,
 	cb: (err: SensorError, result: number | null) => any
-);
+): any;
 
 export function readF(
 	id: string,
 	digits: number,
 	cb: (err: SensorError, result: number | null) => any
-);
+): any;
 
 export function readSimpleC(
 	digits: number,
 	cb: (err: SensorError, result: number | null) => any
-);
+): any;
 
 export function readSimpleF(
 	digits: number,
 	cb: (err: SensorError, result: number | null) => any
-);
+): any;
 
 export function readAllC(
 	digits: number,
 	cb: (err: string | null, result: ValueWithID[]) => any
-);
+): any;
 
 export function readAllF(
 	digits: number,
 	cb: (err: string | null, result: ValueWithID[]) => any
-);
+): any;
 
 export function setW1Directory(devicePath: string): void;
